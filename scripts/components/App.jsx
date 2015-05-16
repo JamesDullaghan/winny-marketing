@@ -1,16 +1,16 @@
 var React = require('react');
 var Header = require('../components/header/Header');
+var Footer = require('../components/footer/Footer');
 
 var App = React.createClass({
   displayName: 'App Component',
 
-  componentWillMount: function () {
-
-  },
-
   render: function () {
     return (
-      <Header/>
+      <div>
+        <Header/>
+        <Footer/>
+      </div>
     )
   }
 });

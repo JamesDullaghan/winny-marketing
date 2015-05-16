@@ -1,0 +1,40 @@
+{
+  "scripts": {
+    "start": "npm run serve | npm run dev",
+    "serve": "http-server -p 8080",
+    "dev": "webpack-dev-server --progress --colors --port 8090",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "name": "winny-front-end",
+  "version": "0.0.1",
+  "main": "index.js",
+  "description": "Front end application for winny-api",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jamesdullaghan/winny-front-end.git"
+  },
+  "author": "James Dullaghan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesdullaghan/winny-front-end/issues"
+  },
+  "homepage": "https://github.com/jamesdullaghan/winny-front-end",
+  "dependencies": {
+    "css-loader": "^0.12.1",
+    "file-loader": "^0.8.1",
+    "image-webpack-loader": "^1.4.0",
+    "imagemin": "^3.2.0",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "reflux": "^0.2.7",
+    "style-loader": "^0.12.2",
+    "superagent": "^1.2.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.8.0",
+    "jsx-loader": "^0.13.2",
+    "node-libs-browser": "^0.5.0",
+    "webpack": "^1.9.6",
+    "webpack-dev-server": "^1.8.2"
+  }
+}

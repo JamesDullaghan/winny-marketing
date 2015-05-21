@@ -1,0 +1,10 @@
+{
+  "globalstrict": false,
+  "globals": {
+    "require": false,
+    "__dirname": false,
+    "setTimeout": false,
+    "DEFAULT_SETTINGS": false
+  },
+  "esnext" : true
+}

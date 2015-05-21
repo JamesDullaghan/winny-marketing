@@ -159,6 +159,6 @@ gulp.task('serve:webpack', function(){
 
 gulp.task('release', function(callback){
   release = true;
-  var tasks = ['build', 'deploy:amazon'];
+  var tasks = ['build'];
   runSequence(tasks, callback);
 });

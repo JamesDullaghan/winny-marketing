@@ -12,7 +12,11 @@
     "type": "git",
     "url": "http://github.com/jamesdullaghan/winny-front-end.git"
   },
-
+  "scripts": {
+    "start": "gulp",
+    "test": "karma start",
+    "coveralls": "cat coverage/lcov.info | coveralls"
+  },
   "dependencies": {
     "babel": "^4.3.0",
     "babel-runtime": "^4.3.0",

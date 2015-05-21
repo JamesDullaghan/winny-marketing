@@ -1,6 +1,6 @@
 var React = require('react');
-var Navigation = require('./Navigation');
-var MobileNavigation = require('./MobileNavigation');
+var Navigation = require('./navigation');
+var MobileNavigation = require('./mobile_navigation');
 
 var Header = React.createClass({
   displayName: "Header Component",

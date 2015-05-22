@@ -1,5 +1,5 @@
 var React = require('react');
-var FooterLinks = require('./FooterLinks');
+var FooterLinks = require('./footer_links');
 
 var Footer = React.createClass({
 

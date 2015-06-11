@@ -9,7 +9,7 @@ var Press =  require('./components/press');
 var Blog =   require('./components/blog');
 var Jobs =   require('./components/jobs');
 var Contact =   require('./components/contact');
-
+var Posts = require('./components/posts/posts_page');
 
 var DefaultRoute = Router.DefaultRoute;
 var Route = Router.Route;
@@ -35,6 +35,7 @@ var routes = (
     <Route name="press" handler={Press}/>
     <Route name="blog" handler={Blog}/>
     <Route name="jobs" handler={Jobs}/>
+    <Route name="posts" handler={Posts}/>
     <Route name="contact" handler={Contact}/>
     <DefaultRoute handler={Index}/>
   </Route>

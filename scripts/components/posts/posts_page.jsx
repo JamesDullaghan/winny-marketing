@@ -52,13 +52,20 @@ var PostsPage = React.createClass({
 // <Link to="post" params={ {postId: this.props.post.id}}>
 //   {this.props.post.title}
 // </Link>
+// function renderPostBody(postBody) {
+//   return {__html: postBody }
+// }
 
 var PostItem = React.createClass({
+  renderPostBody: function () {
+    return {__html: this.props.post.short_body}
+  },
+
   render: function () {
     return (
       <li className="post">
         <h1>{this.props.post.title}</h1>
-        <p>{this.props.post.short_body}</p>
+        <p dangerouslySetInnerHTML={this.renderPostBody()} />
         <p>{this.props.post.author} - {this.props.post.published_date}</p>
       </li>
     );

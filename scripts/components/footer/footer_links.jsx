@@ -1,5 +1,7 @@
 var React = require('react');
 var Icon = require('./icon');
+var Router = require('react-router');
+var Link = Router.Link;
 
 var FooterLinks = React.createClass({
   displayName: 'Footer Links Component',
@@ -8,34 +10,22 @@ var FooterLinks = React.createClass({
     return (
       <ul className="list-unstyled">
         <li>
-          <a href="#">
+          <Link to="about">
             <Icon iconType="fa-caret-right" />
             Who we are
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
-            <Icon iconType="fa-caret-right" />
-            Press
-          </a>
-        </li>
-        <li>
-          <a href="#">
+          <Link to="posts">
             <Icon iconType="fa-caret-right" />
             Blog
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
-            <Icon iconType="fa-caret-right" />
-            Jobs
-          </a>
-        </li>
-        <li>
-          <a href="#">
+          <Link to="contact">
             <Icon iconType="fa-caret-right" />
             Contact us
-          </a>
+          </Link>
         </li>
       </ul>
     )

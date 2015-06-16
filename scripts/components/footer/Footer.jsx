@@ -16,9 +16,6 @@ var Footer = React.createClass({
                   <h3 className="title">About us</h3>
                   <FooterLinks/>
                 </div>
-                <div className="footer-col-inner">
-                  <h3 className="title">Product</h3>
-                </div>
               </div>
             </div>
           </div>

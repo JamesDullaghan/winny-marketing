@@ -8,7 +8,7 @@ var facilityId = 1;
 if (production) {
   var APIRoot =  'http://api.winny.io/'
 } else {
-  var APIRoot = 'http://localhost:3000/'
+  var APIRoot = 'http://localhost:3002/'
 }
 
 module.exports = {

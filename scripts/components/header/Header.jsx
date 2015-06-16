@@ -14,7 +14,6 @@ var Header = React.createClass({
               <span className="text">Winny.io</span>
             </a>
           </h1>
-          <MobileNavigation/>
           <Navigation/>
         </div>
       </header>

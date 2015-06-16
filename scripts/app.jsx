@@ -1,19 +1,20 @@
 var React =  require('react');
-var Router = require('react-router');
+var ReactRouter = require('react-router');
+// var BrowserHistory = require('react-router/lib/BrowserHistory');
              require('../styles/main.css');
 var Header = require('./components/header/header');
 var Footer = require('./components/footer/footer');
 var Index =  require('./components/index');
 var About =  require('./components/about');
-var Press =  require('./components/press');
-var Blog =   require('./components/blog');
-var Jobs =   require('./components/jobs');
 var Contact =   require('./components/contact');
 var Posts = require('./components/posts/posts_page');
+var Post = require('./components/posts/post_page');
 
-var DefaultRoute = Router.DefaultRoute;
-var Route = Router.Route;
-var RouteHandler = Router.RouteHandler;
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var RouteHandler = ReactRouter.RouteHandler;
+var DefaultRoute = ReactRouter.DefaultRoute;
+
 
 var App = React.createClass({
   displayName: 'App Component',
@@ -31,17 +32,15 @@ var App = React.createClass({
 
 var routes = (
   <Route name="app" path="/" handler={App}>
-    <Route name="about" handler={About}/>
-    <Route name="press" handler={Press}/>
-    <Route name="blog" handler={Blog}/>
-    <Route name="jobs" handler={Jobs}/>
-    <Route name="posts" handler={Posts}/>
-    <Route name="contact" handler={Contact}/>
+    <Route name="about" handler={About} activeClassName="active" />
+    <Route name="posts" path="/posts" handler={Posts} activeClassName="active" />
+    <Route name="post" path="/posts/:postId" handler={Post} activeClassName="active" />
+    <Route name="contact" handler={Contact} activeClassName="active" />
     <DefaultRoute handler={Index}/>
   </Route>
 )
 
-Router.run(routes, function (Handler) {
+ReactRouter.run(routes, function (Handler) {
   React.render(<Handler />, document.getElementById('content'))
 });
 

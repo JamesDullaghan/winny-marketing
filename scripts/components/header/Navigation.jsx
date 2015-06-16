@@ -16,16 +16,7 @@ var Navigation = React.createClass({
             <Link to="about">Who we are</Link>
           </li>
           <li className="nav-item">
-            <Link to="press">Press</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="blog">Blog</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="posts">Posts</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="jobs">Jobs</Link>
+            <Link to="posts">Blog</Link>
           </li>
           <li className="nav-item">
             <Link to="contact">Contact Us</Link>
@@ -35,5 +26,6 @@ var Navigation = React.createClass({
     )
   }
 });
+
 
 module.exports = Navigation;

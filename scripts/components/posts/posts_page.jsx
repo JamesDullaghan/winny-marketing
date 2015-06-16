@@ -2,6 +2,7 @@ var React = require('react');
 var WebAPIUtils = require('../../utils/WebAPIUtils');
 var PostStore = require('../../stores/PostStore');
 var ErrorNotice = require('../../components/common/error_notice');
+var $ = require('jquery');
 
 var Post = require('./post_page');
 
@@ -16,6 +17,10 @@ var PostsPage = React.createClass({
       posts: PostStore.getAllPosts(),
       errors: []
     };
+  },
+
+  componentWillMount: function () {
+    $('body').removeClass('home-page').addClass('blog-page');
   },
 
   componentDidMount: function () {
@@ -36,25 +41,20 @@ var PostsPage = React.createClass({
 
   render: function () {
     var errors = (this.state.errors.length > 0) ? <ErrorNotice errors={this.state.errors}/> : <div></div>;
-    // console.log(this.state);
     return (
-      <div>
+      <div className="wrapper">
         {errors}
-        <div className="row">
-          <PostsList posts={this.state.posts} />
+        <div className="blog container">
+          <div className="row">
+            <div id="blog-mansonry" className="blog-list">
+              <PostsList posts={this.state.posts} />
+            </div>
+          </div>
         </div>
       </div>
-    );
+    )
   }
 });
-
-
-// <Link to="post" params={ {postId: this.props.post.id}}>
-//   {this.props.post.title}
-// </Link>
-// function renderPostBody(postBody) {
-//   return {__html: postBody }
-// }
 
 var PostItem = React.createClass({
   renderPostBody: function () {
@@ -63,24 +63,48 @@ var PostItem = React.createClass({
 
   render: function () {
     return (
-      <li className="post">
-        <h1>{this.props.post.title}</h1>
-        <p dangerouslySetInnerHTML={this.renderPostBody()} />
-        <p>{this.props.post.author} - {this.props.post.published_date}</p>
-      </li>
-    );
+      <article className="post col-md-4 col-sm-6 col-xs-12">
+        <div className="post-inner">
+          <figure className="post-thumb">
+            <Link to="post" params={{postId: this.props.post.id}}>
+              <img src={this.props.post.featured_image_list_url} alt={this.props.post.title} />
+            </Link>
+          </figure>
+          <div className="content">
+            <h3 className="post-title">
+              <Link to="post" params={{postId: this.props.post.id}}>
+                {this.props.post.display_title}
+              </Link>
+            </h3>
+            <div className="post-entry">
+              <p dangerouslySetInnerHTML={this.renderPostBody()}/>
+              <Link to="post" params={{postId: this.props.post.id}} className="read-more">
+                Read More
+                <i className="fa fa-long-arrow-right"></i>
+              </Link>
+            </div>
+
+            <div className="meta">
+              <ul className="meta-list list-inline">
+                <li className="post-time post_date date updated">{this.props.post.published_date}</li>
+                <li className="post-author">by {this.props.post.author}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    )
   }
 });
 
 var PostsList = React.createClass({
   render: function () {
-    // console.log(this.props);
     return (
-      <ul className="col-lg-8 col-md-10 col-sm-12 col-lg-offset-2 col-md-offset-1">
+      <div>
         {this.props.posts.map(function(post, index) {
           return <PostItem post={post} key={"post-" + index}/>
         })}
-      </ul>
+      </div>
     );
   }
 });

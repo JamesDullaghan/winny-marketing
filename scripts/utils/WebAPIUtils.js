@@ -41,5 +41,16 @@ module.exports = {
           ServerActionCreators.receivePost(json);
         }
       });
+  },
+
+  loadProfile: function () {
+    request.get(APIEndpoints.PROFILE)
+      .set('Accept', 'application/json')
+      .end(function(error, res) {
+        json = JSON.parse(res.text);
+        ServerActionCreators.receiveProfile(json);
+      });
   }
+
+
 }

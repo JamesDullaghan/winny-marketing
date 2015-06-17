@@ -16,5 +16,12 @@ module.exports = {
       type: ActionTypes.RECEIVE_POST,
       json: json
     });
+  },
+
+  receiveProfile: function (json) {
+    AppDispatcher.handleServerAction({
+      type: ActionTypes.RECEIVE_PROFILE,
+      json: json
+    });
   }
 }

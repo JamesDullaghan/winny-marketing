@@ -4,8 +4,6 @@ var PostStore = require('../../stores/PostStore');
 var ErrorNotice = require('../../components/common/error_notice');
 var $ = require('jquery');
 
-var Post = require('./post_page');
-
 var PostActionCreators = require('../../actions/PostActionCreators');
 
 var Router = require('react-router');

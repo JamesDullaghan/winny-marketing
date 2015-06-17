@@ -15,9 +15,20 @@ var Route = ReactRouter.Route;
 var RouteHandler = ReactRouter.RouteHandler;
 var DefaultRoute = ReactRouter.DefaultRoute;
 
+var $ = require('jquery');
 
 var App = React.createClass({
   displayName: 'App Component',
+
+  componentWillMount: function () {
+    $(window).on('scroll load', function() {
+      if ($(window).scrollTop() > 0) {
+        $('#header').addClass('scrolled');
+      } else {
+        $('#header').removeClass('scrolled');
+      }
+    });
+  },
 
   render: function () {
     return (

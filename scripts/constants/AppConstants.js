@@ -16,7 +16,8 @@ module.exports = {
   APIEndpoints: {
     POSTS: APIRoot + "v1/posts?facility_id=" + facilityId,
     POST: APIRoot + "v1/posts",
-    PROFILE: APIRoot + "v1/profile?facility_id=" + facilityId
+    PROFILE: APIRoot + "v1/profile?facility_id=" + facilityId,
+    TEAM: APIRoot + "v1/team?facility_id=" + facilityId
   },
 
   PayloadSources: keyMirror({
@@ -30,6 +31,8 @@ module.exports = {
     LOAD_POST: null,
     RECEIVE_POST: null,
     LOAD_PROFILE: null,
-    RECEIVE_PROFILE: null
+    RECEIVE_PROFILE: null,
+    LOAD_TEAM: null,
+    RECEIVE_TEAM: null
   })
 };

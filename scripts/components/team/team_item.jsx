@@ -16,22 +16,11 @@ var TeamItem = React.createClass({
             </figcaption>
           </figure>
           <div className="social">
+
             <ul className="social-list list-inline">
-              <li>
-                <a href="#">
-                  <i className="fa fa-linkedin"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fa fa-facebook"></i>
-                </a>
-              </li>
+              <TeamIcon url="http://example.com" icon="fa-linkedin" />
+              <TeamIcon url="http://example.com" icon="fa-twitter" />
+              <TeamIcon url="http://example.com" icon="fa-facebook" />
             </ul>
           </div>
         </div>

@@ -23,5 +23,12 @@ module.exports = {
       type: ActionTypes.RECEIVE_PROFILE,
       json: json
     });
+  },
+
+  receiveTeam: function (json) {
+    AppDispatcher.handleServerAction({
+      type: ActionTypes.RECEIVE_TEAM,
+      json: json
+    });
   }
 }

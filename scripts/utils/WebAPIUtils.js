@@ -50,6 +50,15 @@ module.exports = {
         json = JSON.parse(res.text);
         ServerActionCreators.receiveProfile(json);
       });
+  },
+
+  loadTeam: function () {
+    request.get(APIEndpoints.TEAM)
+      .set('Accept', 'application/json')
+      .end(function(error, res) {
+        json = JSON.parse(res.text);
+        ServerActionCreators.receiveTeam(json);
+      });
   }
 
 

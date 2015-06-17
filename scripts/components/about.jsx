@@ -1,12 +1,35 @@
 var React = require('react');
 
-var TeamList = require('../components/about/team_list');
+var TeamList = require('../components/team/team_list');
 
 var WebAPIUtils = require('../utils/WebAPIUtils');
-var ProfileStore = require('../stores/ProfileStore');
-var ProfileActionCreators = require('../actions/ProfileActionCreators');
+var TeamStore = require('../stores/TeamStore');
+var TeamActionCreators = require('../actions/TeamActionCreators');
 
 var About = React.createClass({
+  getInitialState: function () {
+    return {
+      team: TeamStore.getTeam(),
+      errors: []
+    };
+  },
+
+  componentDidMount: function () {
+    TeamStore.addChangeListener(this._onChange);
+    TeamActionCreators.loadTeam();
+  },
+
+  componentWillUnmount: function () {
+    TeamStore.removeChangeListener(this._onChange);
+  },
+
+  _onChange: function () {
+    this.setState({
+      team: TeamStore.getTeam(),
+      errors: TeamStore.getErrors()
+    });
+  },
+
   render: function () {
     return (
       <div>

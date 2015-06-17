@@ -1,5 +1,7 @@
 var React = require('react');
 
+var TeamIcon = require('./team_icon');
+
 var TeamItem = React.createClass({
   displayName: 'Team Member',
 

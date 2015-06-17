@@ -43,7 +43,7 @@ var About = React.createClass({
                 <p>Some more text goes here</p>
                 <blockquote className="belife">Some other stuff goes here</blockquote>
               </div>
-              <TeamList/>
+              <TeamList team={this.state.team}/>
             </div>
           </div>
         </section>

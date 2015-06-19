@@ -1,6 +1,5 @@
 var React =  require('react');
 var ReactRouter = require('react-router');
-// var BrowserHistory = require('react-router/lib/BrowserHistory');
              require('../styles/main.css');
 var Header = require('./components/header/header');
 var Footer = require('./components/footer/footer');

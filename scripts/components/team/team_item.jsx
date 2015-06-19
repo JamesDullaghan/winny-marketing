@@ -12,7 +12,7 @@ var TeamItem = React.createClass({
           <figure className="profile">
             <img src="http://placehold.it/400/400" className="img-responsive" />
             <figcaption className="info">
-              <span className="name">James Dullaghan</span>
+              <span className="name">{this.props.member.full_name}</span>
               <br/>
               <span className="job-title">Co-Founder</span>
             </figcaption>

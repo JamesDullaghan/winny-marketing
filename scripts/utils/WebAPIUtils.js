@@ -59,7 +59,23 @@ module.exports = {
         json = JSON.parse(res.text);
         ServerActionCreators.receiveTeam(json);
       });
+  },
+
+  createContact: function(name, email, phone, subject, message) {
+    request.post(APIEndpoints.CONTACTS)
+      .set('Accept', 'application/json')
+      .send({ name: name, email: email, phone: phone, subject: subject, message: message })
+      .end(function(error, res) {
+        if (res) {
+          if (res.error) {
+            var errorMsgs = _getErrors(res);
+            ServerActionCreators.receiveCreatedContact(null, errorMsgs);
+          } else {
+            json = JSON.parse(res.text);
+            ServerActionCreators.receiveCreatedContact(json, null);
+          }
+        }
+      });
   }
 
-
-}
+};

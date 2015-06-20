@@ -30,5 +30,14 @@ module.exports = {
       type: ActionTypes.RECEIVE_TEAM,
       json: json
     });
+  },
+
+  receiveCreatedContact: function (json, errors) {
+    AppDispatcher.handleServerAction({
+      type: ActionTypes.RECEIVE_CREATED_CONTACT,
+      json: json,
+      errors: errors
+    });
   }
+
 }

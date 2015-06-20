@@ -12,12 +12,18 @@ if (production) {
 }
 
 module.exports = {
+  Settings: {
+    production: production,
+    facilityId: facilityId,
+    APIRoot: APIRoot
+  },
 
   APIEndpoints: {
     POSTS: APIRoot + "v1/posts?facility_id=" + facilityId,
     POST: APIRoot + "v1/posts",
     PROFILE: APIRoot + "v1/profile?facility_id=" + facilityId,
-    TEAM: APIRoot + "v1/team?facility_id=" + facilityId
+    TEAM: APIRoot + "v1/team?facility_id=" + facilityId,
+    CONTACTS: APIRoot + "v1/contacts?facility_id=" + facilityId
   },
 
   PayloadSources: keyMirror({
@@ -33,6 +39,7 @@ module.exports = {
     LOAD_PROFILE: null,
     RECEIVE_PROFILE: null,
     LOAD_TEAM: null,
-    RECEIVE_TEAM: null
+    RECEIVE_TEAM: null,
+    CREATE_CONTACT: null
   })
 };

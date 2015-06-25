@@ -16,6 +16,9 @@ var Navigation = React.createClass({
             <Link to="about">Who we are</Link>
           </li>
           <li className="nav-item">
+            <Link to="services">Services</Link>
+          </li>
+          <li className="nav-item">
             <Link to="posts">Blog</Link>
           </li>
           <li className="nav-item">

@@ -10,7 +10,7 @@ var TeamItem = React.createClass({
       <div className="member col-md-6 col-sm-6 col-xs-12">
         <div className="member-inner">
           <figure className="profile">
-            <img src="http://placehold.it/400/400" className="img-responsive" />
+            <img src={this.props.member.image_main_url} className="img-responsive" />
             <figcaption className="info">
               <span className="name">{this.props.member.full_name}</span>
               <br/>

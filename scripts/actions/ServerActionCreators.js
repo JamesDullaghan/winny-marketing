@@ -38,6 +38,19 @@ module.exports = {
       json: json,
       errors: errors
     });
-  }
+  },
 
+  receiveServices: function (json) {
+    AppDispatcher.handleServerAction({
+      type: ActionTypes.RECEIVE_SERVICES,
+      json: json
+    });
+  },
+
+  receiveService: function (json) {
+    AppDispatcher.handleServerAction({
+      type: ActionTypes.RECEIVE_SERVICE,
+      json: json
+    });
+  }
 }

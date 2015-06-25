@@ -519,6 +519,8 @@ select {
 }
 .section-on-bg .title {
   color: #fff;
+  position: relative;
+  margin-top: 100px;
 }
 .section-on-bg .intro {
   color: #fff;

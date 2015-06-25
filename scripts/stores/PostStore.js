@@ -58,7 +58,6 @@ PostStore.dispatchToken = AppDispatcher.register(function(payload) {
 
   switch(action.type) {
     case ActionTypes.RECEIVE_POSTS:
-      console.log(action);
       _posts = action.json.posts;
       PostStore.emitChange();
       break;

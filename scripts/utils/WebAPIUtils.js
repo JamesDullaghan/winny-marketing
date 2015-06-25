@@ -76,6 +76,32 @@ module.exports = {
           }
         }
       });
+  },
+
+  loadServices: function () {
+    // POSTS endpoint requires facilityId
+    request.get(APIEndpoints.SERVICES)
+      .set('Accept', 'application/json')
+      // No access token required for public posts
+      // .set('Authorization', sessionStorage.getItem('accessToken'))
+      .end(function(error, res) {
+        json = JSON.parse(res.text);
+        ServerActionCreators.receiveServices(json);
+      });
+  },
+
+  loadService: function (serviceId) {
+    // POST endpoint does not require facilityId
+    request.get(APIEndpoints.SERVICE + '/' + serviceId)
+      .set('Accept', 'application/json')
+      // No access token required for public post
+      // .set('Authorization', sessionStorage.getItem('accessToken))
+      .end(function(error, res) {
+        if (res) {
+          json = JSON.parse(res.text);
+          ServerActionCreators.receiveService(json);
+        }
+      });
   }
 
 };

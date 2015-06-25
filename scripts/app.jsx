@@ -8,6 +8,7 @@ var About =  require('./components/about');
 var Contact =   require('./components/contact');
 var Posts = require('./components/posts/posts_page');
 var Post = require('./components/posts/post_page');
+var Services = require('./components/services');
 
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
@@ -46,6 +47,7 @@ var routes = (
     <Route name="posts" path="/posts" handler={Posts} activeClassName="active" />
     <Route name="post" path="/posts/:postId" handler={Post} activeClassName="active" />
     <Route name="contact" handler={Contact} activeClassName="active" />
+    <Route name="services" handler={Services} activeClassName="active"/>
     <DefaultRoute handler={Index}/>
   </Route>
 )

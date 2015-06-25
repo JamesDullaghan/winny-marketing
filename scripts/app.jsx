@@ -1,6 +1,6 @@
 var React =  require('react');
 var ReactRouter = require('react-router');
-             require('../styles/main.css');
+             require('../styles/style.scss');
 var Header = require('./components/header/header');
 var Footer = require('./components/footer/footer');
 var Index =  require('./components/index');

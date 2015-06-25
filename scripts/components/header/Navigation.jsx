@@ -7,25 +7,30 @@ var Navigation = React.createClass({
 
   render: function () {
     return (
-      <div id="navbar-collapse" className="navbar-collapse collapse">
-        <ul className="nav navbar-nav">
-          <li className="active nav-item">
-            <Link to="app">Home</Link>
+      <nav className="top-bar" data-topbar>
+        <ul className="title-area">
+          <li className="name">
+            <h1>
+              <Link to="app">Your Pet Hotel</Link>
+            </h1>
           </li>
-          <li className="nav-item">
-            <Link to="about">Who we are</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="services">Services</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="posts">Blog</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="contact">Contact Us</Link>
+          <li className="toggle-topbar menu-icon">
+            <a href="#">
+              <span></span>
+            </a>
           </li>
         </ul>
-      </div>
+
+        <section className="top-bar-section">
+          <ul className="right">
+            <li><Link to="app">Home</Link></li>
+            <li><Link to="about">About</Link></li>
+            <li><Link to="services">Services</Link></li>
+            <li><Link to="posts">Posts</Link></li>
+            <li><Link to="contact">Contact</Link></li>
+          </ul>
+        </section>
+      </nav>
     )
   }
 });

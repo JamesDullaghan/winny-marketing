@@ -21,6 +21,7 @@ var ServiceItem = React.createClass({
         </div>
         <div className="panel-collapse">
           <div className="panel-body">
+            <img src={this.props.service.main_image_url} alt={this.props.service.name} />
             <p>{this.props.service.description}</p>
             <b>{this.props.service.display_price}</b>
           </div>
